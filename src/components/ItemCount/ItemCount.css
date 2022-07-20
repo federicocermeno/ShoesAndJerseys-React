@@ -1,0 +1,30 @@
+.handle-cart {
+    border: 2px solid red;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    width: 30%;
+}
+
+.cart-buttons{
+    align-items: center;
+    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.cart-buttons button {
+    background-color: #fff;
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+}
+
+.cart-buttons p {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 30%;
+}

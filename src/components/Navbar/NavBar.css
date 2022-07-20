@@ -1,0 +1,31 @@
+.navbar {
+  align-items: center;
+  background-color: #333;
+  display: flex;
+  justify-content: space-between;
+}
+
+.brand {
+  font-size: 20px;
+}
+
+.nav__menu {
+  display: flex;
+  margin: 0 20px;
+  overflow: hidden;
+}
+
+.navbar__item {
+  color: #f2f2f2;
+  float: left;
+  font-size: 16px;
+  padding: 14px 16px;
+  text-decoration: none;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.navbar__item:hover {
+  background-color: #fff;
+  color: #000;
+}

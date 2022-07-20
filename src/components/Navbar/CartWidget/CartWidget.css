@@ -1,0 +1,23 @@
+.cart__container {
+    margin-left: auto;
+    padding: 5px 20px 0;
+    text-decoration: none;
+}
+
+.cart__container-icon {
+    color: #fff;
+    
+}
+
+
+
+.cart__container-icon:hover {
+    color: red;
+}
+
+.cart__img {
+    height: 30px;
+    width: 80px;
+    color: #fff
+}
+

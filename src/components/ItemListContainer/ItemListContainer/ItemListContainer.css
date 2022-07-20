@@ -1,0 +1,9 @@
+.item-list__container {
+    margin: 5em;
+}
+
+.item-list__body {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 200px;
+}
