@@ -5,14 +5,15 @@
 }
 
 .cart__container-icon {
-    color: #fff;
+    color: #000;
+    margin-right: 2em;
     
 }
 
 
 
 .cart__container-icon:hover {
-    color: red;
+    color: #fff;
 }
 
 .cart__img {

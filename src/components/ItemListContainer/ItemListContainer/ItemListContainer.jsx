@@ -1,25 +1,30 @@
-import React from 'react'
 import { useState, useEffect} from 'react'
+import { useParams } from 'react-router-dom'
 import { getFetch } from '../../../helpers/getFetch'
-import ItemCount from '../../ItemCount/ItemCount'
 import { ItemList } from '../ItemList/ItemList'
 import Spinner from '../LoadingSpinner/Spinner'
-
 import './ItemListContainer.css'
-
 
 const ItemListContainer = ({greeting}) => {
     const [productos, setProductos] = useState([])
     const [loading, setLoading] = useState(true)
 
+    const {categoriaId} = useParams()
+
     useEffect(() => {
-        getFetch()
-        .then(respuesta => setProductos(respuesta))
-        .finally(() => { setLoading(false) })
-    },[])
+        if (categoriaId) {
+          getFetch()
+          .then(respuesta => setProductos(respuesta.filter(prod => prod.categoria === categoriaId)))
+          .finally(() => { setLoading(false) })
+        } else {
+          getFetch()
+          .then(respuesta => setProductos(respuesta))
+          .finally(() => { setLoading(false) })
+        }
+
+    },[categoriaId])
 
     const onAdd = (setAvStock, avStock, count, setDisable) => {
-      
       setAvStock(avStock - count) //cuando se suma un producto al carro,se resta uno del stock
 
       if(avStock >= count) {
@@ -37,6 +42,7 @@ const ItemListContainer = ({greeting}) => {
       }
   }
 
+ /*  console.log(categoriaId) */
   return (
     <> 
       <p className='item-list__container'>
@@ -45,8 +51,9 @@ const ItemListContainer = ({greeting}) => {
       <section className='item-list__body'> 
         { loading ? <Spinner /> : <ItemList items={productos} /> }
       </section>
-      <ItemCount stock={10} initial={1} onAdd={onAdd}/>
+      {/* <ItemCount stock={10} initial={1} onAdd={onAdd}/> */}
       
+
     </>
   )
 }

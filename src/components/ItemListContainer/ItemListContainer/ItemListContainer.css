@@ -1,9 +1,14 @@
 .item-list__container {
-    margin: 5em;
+    padding: 4em 0 1em;
+}
+
+.item-list__container {
+    font-size: 26px;
 }
 
 .item-list__body {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     margin-bottom: 200px;
+    flex-wrap: wrap;
 }
