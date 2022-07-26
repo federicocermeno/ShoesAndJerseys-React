@@ -1,16 +1,21 @@
 let productos = [
-  {id:"1",nombre:"nike jordan 1",descripcion:"jordan 1", stock: "10", foto:"https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/4e9b9d43-0379-4b0f-8798-5ad5cccfbf13/air-jordan-1-mid-se-zapatillas-nmnWW6.png"},
-  {id:"2",nombre:"nike jordan 2",descripcion:"jordan 2", stock: "22", foto:"https://cf.shopee.com.ar/file/4b1cf8622f485350797dc2a1486d25d7"},
-  {id:"3",nombre:"nike jordan 3",descripcion:"jordan 3", stock: "12", foto:"https://cf.shopee.com.ar/file/4bf6e8cc55b9870052ff4068ff31ce89"},
-  {id:"4",nombre:"nike jordan 4",descripcion:"jordan 4", stock: "50", foto:"https://essential.vtexassets.com/arquivos/ids/572716-500-auto?v=637915396967900000&width=500&height=auto&aspect=true"},
+  {id:"1",categoria: 'zapatillas',nombre:"Nike jordan 1 Low", precio:"5000", descripcion:"Jordan 1", stock: "10", foto:"https://images.pexels.com/photos/9565802/pexels-photo-9565802.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"},
+  {id:"2",categoria: 'zapatillas',nombre:"Nike jordan 2 Mid",precio:"4000", descripcion:"Jordan 2", stock: "22", foto:"https://images.pexels.com/photos/6540939/pexels-photo-6540939.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"},
+  {id:"3",categoria: 'zapatillas',nombre:"Nike Air Max 90",precio:"7000", descripcion:"Air Max 90", stock: "12", foto:"https://images.pexels.com/photos/6050921/pexels-photo-6050921.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"},
+  {id:"4",categoria: 'zapatillas',nombre:"Nike jordan 4",precio:"2000", descripcion:"Jordan 4", stock: "50", foto:"https://images.pexels.com/photos/6540927/pexels-photo-6540927.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"},
+  {id:"5",categoria: 'remeras',nombre:"Nike jordan 4",precio:"1000", descripcion:"Jordan 4", stock: "50", foto:"https://images.pexels.com/photos/6540927/pexels-photo-6540927.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"},
+  {id:"6",categoria: 'zapatillas',nombre:"Nike jordan 4",precio:"4000", descripcion:"Jordan 4", stock: "50", foto:"https://images.pexels.com/photos/6540927/pexels-photo-6540927.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"},
 ]
 
+ export const getFetch = (id) => {
 
- export const getFetch = () => {
     return new Promise((resolve,reject) => {
       setTimeout(() => {
-        resolve(productos)
-      }, 2000);
-  
+        if(id) {
+          resolve(productos.find(producto => producto.id == id))
+        } else {
+          resolve(productos)
+        }
+      }, 1000);
     })
   }
