@@ -9,6 +9,5 @@
 .item-list__body {
     display: flex;
     justify-content: center;
-    margin-bottom: 200px;
     flex-wrap: wrap;
 }
