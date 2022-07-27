@@ -1,4 +1,5 @@
 # react-ecommerce
- ![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/91204851/181088828-7f433c76-4c55-47e8-a7da-dba46c105b45.gif)
 
 
+
+![Vite App - Google Chrome 2022-07-26 15-46-09](https://user-images.githubusercontent.com/91204851/181143292-76a70391-0e40-45de-911b-5cf402b664fe.gif)
