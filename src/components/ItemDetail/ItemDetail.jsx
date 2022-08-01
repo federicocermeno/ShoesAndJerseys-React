@@ -1,10 +1,17 @@
-import React from "react";
-
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 import "./ItemDetail.css";
+import ItemCount from "../ItemCount/ItemCount";
 
 const ItemDetail = ({ item }) => {
+
+  const [itemCard, setItemCard] = useState(true)
+
+  const onAdd = (cantidad) => {
+    console.log(`La cantidad es: ${cantidad}`)
+    setItemCard(false)
+  }
   return (
     <>
       <div className="product-container">
@@ -23,6 +30,13 @@ const ItemDetail = ({ item }) => {
               <Button variant="secondary">Volver a la lista</Button>
             </Link>
           </div>
+          {itemCard? 
+            <ItemCount stock={10} initial={1} onAdd={onAdd} />
+            :
+            <Link to='/cart' className="back-button">
+              <Button variant="secondary">Ver carrito</Button>
+            </Link>
+          }
         </div>
       </div>
       

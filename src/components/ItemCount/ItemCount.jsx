@@ -2,33 +2,24 @@ import React, { useState } from "react";
 import "./ItemCount.css";
 
 export default function ItemCount({ stock, initial, onAdd }) {
-    const [count, setCount] = useState(parseInt(initial));
-    const [avStock, setAvStock] = useState(parseInt(stock));
-    const [disable, setDisable] = useState(false); //handle del boton "agregar al carrito"
-    //console.log(AvStock)
-
+    const [count, setCount] = useState(initial);
+    
     const handleAdd = () => {
-        setCount(count + 1);
-
-        if (count == stock) {
-            console.log(`Lo maximo que podes llevar son ${stock} productos`);
-            setCount(count); //para que no pueda sumar mas que el stock indicado
+        if (count < stock) {
+            setCount(count + 1)
         }
-    };
-
+    }
     const handleSubstract = () => {
-        setCount(count - 1);
-
-        if (count <= 1) {
-            setCount(count);
-            console.log("No es logico tener 0 productos! ¿En que pensas?");
+        if (count > initial) {
+            setCount(count - 1)
         }
-    };
+    }
 
-    const onAddCount = () => {
-        onAdd(setAvStock, avStock, count, setDisable);
-    };
-
+    const handleAddToCart = () => {
+        if (count < stock) {
+            onAdd(count)
+        }
+    }
     return (
         <div className="handle-cart">
             <h3>Item name</h3>
@@ -38,7 +29,7 @@ export default function ItemCount({ stock, initial, onAdd }) {
                 <button onClick={handleAdd}>+</button>
             </div>
             <br />
-            <button onClick={onAddCount} disabled={disable}>
+            <button onClick={handleAddToCart} >
                 Agregar al carrito
             </button>
         </div>

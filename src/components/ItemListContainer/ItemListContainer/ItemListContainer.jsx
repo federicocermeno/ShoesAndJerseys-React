@@ -24,25 +24,6 @@ const ItemListContainer = ({greeting}) => {
 
     },[categoriaId])
 
-    const onAdd = (setAvStock, avStock, count, setDisable) => {
-      setAvStock(avStock - count) //cuando se suma un producto al carro,se resta uno del stock
-
-      if(avStock >= count) {
-          if (count == 1 && avStock >= count) {
-              console.log(`Se ha agregado ${count} producto al carrito`)
-          }
-          if (count > 1 && avStock >= count) {
-              console.log(`Se han agregado ${count} productos al carrito`)
-          }
-          console.log(`Quedan ${avStock - count} productos disponibles`)
-      } 
-      if (avStock <= count) {
-          console.error('No stock')
-          setDisable(true) //deshabilitar boton
-      }
-  }
-
- /*  console.log(categoriaId) */
   return (
     <> 
       <p className='item-list__container'>
