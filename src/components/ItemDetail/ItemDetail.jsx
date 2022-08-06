@@ -3,15 +3,24 @@ import { Link } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 import "./ItemDetail.css";
 import ItemCount from "../ItemCount/ItemCount";
+import { useCartContext } from "../../context/cartContext";
+
+
 
 const ItemDetail = ({ item }) => {
 
   const [itemCard, setItemCard] = useState(true)
+  
+  const { addToCart, cartList } = useCartContext()
 
   const onAdd = (cantidad) => {
     console.log(`La cantidad es: ${cantidad}`)
-    setItemCard(false)
+    setItemCard(false) 
+    addToCart({...item, cantidad: cantidad})
   }
+
+  console.log(cartList)
+
   return (
     <>
       <div className="product-container">
@@ -20,6 +29,7 @@ const ItemDetail = ({ item }) => {
             <img src={item.foto} alt="" />
           </div>
           <div className="product-container__details">
+            <h2>{item.id}</h2>
             <h3>{item.nombre}</h3>
             <h4>Categoria: {item.categoria}</h4>
             <h4>Precio: ${item.precio}</h4>
@@ -39,7 +49,6 @@ const ItemDetail = ({ item }) => {
           }
         </div>
       </div>
-      
     </>
   );
 };

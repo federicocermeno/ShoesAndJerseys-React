@@ -6,8 +6,11 @@ import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import { NavDropdown } from "react-bootstrap";
+import { useCartContext } from "../../context/cartContext";
 
 const NavBar = () => {
+
+  const {totalQuantity} = useCartContext()
   return (
     <Navbar expand="lg" fixed="top" id="navbar">
       <Container>
@@ -28,6 +31,7 @@ const NavBar = () => {
             </NavDropdown>
           </Nav>
           <Link to="/cart">
+            {totalQuantity() != 0 && totalQuantity()}
             <CartWidget />
           </Link>
         </Navbar.Collapse>

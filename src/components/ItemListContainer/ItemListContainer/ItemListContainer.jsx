@@ -1,3 +1,4 @@
+import { collection, getDocs, getFirestore } from 'firebase/firestore'
 import { useState, useEffect} from 'react'
 import { useParams } from 'react-router-dom'
 import { getFetch } from '../../../helpers/getFetch'
@@ -23,6 +24,14 @@ const ItemListContainer = ({greeting}) => {
         }
 
     },[categoriaId])
+
+    /* useEffect(() => {
+        const db= getFirestore()
+        const queryCollection = collection(db, 'productos')
+        getDocs(queryCollection)
+        .then(resp => setProductos(resp.docs.map(prod => ({id : prod.id, ...prod.data()}))))
+        .finally(() => setLoading(false))
+    }) */
 
   return (
     <> 
