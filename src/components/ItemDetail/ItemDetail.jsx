@@ -44,7 +44,7 @@ const ItemDetail = ({ item }) => {
             <ItemCount stock={10} initial={1} onAdd={onAdd} />
             :
             <Link to='/cart' className="back-button">
-              <Button variant="secondary">Ver carrito</Button>
+              <Button variant="secondary">Terminar mi compra</Button>
             </Link>
           }
         </div>

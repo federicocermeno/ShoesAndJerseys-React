@@ -15,7 +15,7 @@ const Cart = () => {
             <div className="w-25">
               <img src={item.foto} className='w-50'/>
             </div>
-            {item.nombre} - {item.stock} - {item.cantidad} - Subtotal: {item.precio * item.cantidad}
+            {item.nombre} - {item.stock} - {item.cantidad} - Subtotal: ${item.precio * item.cantidad}
             <button onClick={() => removeItem(item.id)}>X</button>
           </li>        
         ))}
