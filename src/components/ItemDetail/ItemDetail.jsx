@@ -29,7 +29,6 @@ const ItemDetail = ({ item }) => {
             <img src={item.foto} alt="" />
           </div>
           <div className="product-container__details">
-            <h2>{item.id}</h2>
             <h3>{item.nombre}</h3>
             <h4>Categoria: {item.categoria}</h4>
             <h4>Precio: ${item.precio}</h4>

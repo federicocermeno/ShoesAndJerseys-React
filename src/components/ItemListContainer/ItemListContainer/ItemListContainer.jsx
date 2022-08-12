@@ -12,7 +12,7 @@ const ItemListContainer = ({greeting}) => {
 
     const {categoriaId} = useParams()
 
-    useEffect(() => {
+    /* useEffect(() => {
         if (categoriaId) {
           getFetch()
           .then(respuesta => setProductos(respuesta.filter(prod => prod.categoria === categoriaId)))
@@ -23,15 +23,15 @@ const ItemListContainer = ({greeting}) => {
           .finally(() => { setLoading(false) })
         }
 
-    },[categoriaId])
+    },[categoriaId]) */
 
-    /* useEffect(() => {
+    useEffect(() => {
         const db= getFirestore()
         const queryCollection = collection(db, 'productos')
         getDocs(queryCollection)
-        .then(resp => setProductos(resp.docs.map(prod => ({id : prod.id, ...prod.data()}))))
+        .then(resp => setProductos(resp.docs.map(product => ({id : product.id, ...product.data()}))))
         .finally(() => setLoading(false))
-    }) */
+    })
 
   return (
     <> 
