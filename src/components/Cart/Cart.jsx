@@ -28,9 +28,11 @@ const Cart = () => {
           </Link>
         </>
         :
-        <h4>Precio total : ${totalPrice()}</h4>
+        <>
+          <h4>Precio total : ${totalPrice()}</h4>
+          <button onClick={cartEmpty} id='hola'>Vaciar carrito</button>
+        </>
       }
-      <button onClick={cartEmpty}>Vaciar carrito</button>
     </div>
   )
 }
