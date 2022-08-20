@@ -31,7 +31,9 @@ const NavBar = () => {
             </NavDropdown>
           </Nav>
           <Link to="/cart">
+            <section>
             {totalQuantity() != 0 && totalQuantity()}
+            </section>
             <CartWidget />
           </Link>
         </Navbar.Collapse>

@@ -14,12 +14,12 @@ const ItemDetail = ({ item }) => {
   const { addToCart, cartList } = useCartContext()
 
   const onAdd = (cantidad) => {
-    console.log(`La cantidad es: ${cantidad}`)
+    /* console.log(`La cantidad es: ${cantidad}`) */
     setItemCard(false) 
     addToCart({...item, cantidad: cantidad})
   }
 
-  console.log(cartList)
+  /* console.log(cartList) */
 
   return (
     <>
