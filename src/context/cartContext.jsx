@@ -20,20 +20,6 @@ const eraseAlert = Swal.mixin({
     toast: true
 })
 
-const eraseAllAlert = Swal.mixin({
-    position: 'top-end',
-    showConfirmButton: false,
-    timer: 1600,
-    showClass: {
-        popup: 'animate__animated animate__backInRight animate__faster'
-      },
-      hideClass: {
-        popup: 'animate__animated animate__backOutRight'
-      },
-    timerProgressBar: 'true',
-    toast: true
-})
-
 const CartContextProvider = ({children}) => {
     const [cartList, setCartList] = useState([])
 
@@ -54,10 +40,24 @@ const CartContextProvider = ({children}) => {
     } 
 
     const cartEmpty = () => {
-        setCartList([])
-        eraseAllAlert.fire({
-            icon: 'info',
-            title: 'Eliminaste todos los productos del carrito.'
+
+        Swal.fire({
+            title: '¿Desea borrar todos los productos del carrito?',
+            /* text: "You won't be able to revert this!", */
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Si, borrar'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire(
+                    'Los items del carrito han sido removidos',
+                    '',
+                'success'
+                )
+                setCartList([])
+            }
         })
     }
 
