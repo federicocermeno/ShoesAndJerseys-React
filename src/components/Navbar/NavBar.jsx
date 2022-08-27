@@ -30,14 +30,14 @@ const NavBar = () => {
               </Link>
             </NavDropdown>
           </Nav>
-          <Link to="/cart">
-            <section>
-            {totalQuantity() != 0 && totalQuantity()}
-            </section>
-            <CartWidget />
-          </Link>
         </Navbar.Collapse>
       </Container>
+          <Link to="/cart">
+            <section className="number">
+            {totalQuantity() != 0 && totalQuantity()}
+            </section>
+      <CartWidget />
+          </Link>
     </Navbar>
   );
 };

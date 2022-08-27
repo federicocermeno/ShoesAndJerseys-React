@@ -6,6 +6,7 @@ import ItemListContainer from './components/ItemListContainer/ItemListContainer/
 import ItemDetailContainer from './components/ItemDetail/ItemDetailContainer'
 import Cart from './components/Cart/Cart'
 import CartContextProvider from './context/cartContext';
+import Footer from './components/Footer/Footer';
 
 
 
@@ -24,6 +25,7 @@ function App() {
             </Routes>
           </div>
         </CartContextProvider>
+        {/* <Footer /> */}
     </BrowserRouter>
   )
 }

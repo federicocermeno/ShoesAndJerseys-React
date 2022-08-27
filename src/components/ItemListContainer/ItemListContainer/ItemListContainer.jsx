@@ -18,28 +18,6 @@ const ItemListContainer = ({ greeting }) => {
 
   const { categoriaId } = useParams();
 
-  /* useEffect(() => {
-        if (categoriaId) {
-          getFetch()
-          .then(respuesta => setProductos(respuesta.filter(prod => prod.categoria === categoriaId)))
-          .finally(() => { setLoading(false) })
-        } else {
-          getFetch()
-          .then(respuesta => setProductos(respuesta))
-          .finally(() => { setLoading(false) })
-        }
-
-    },[categoriaId]) */
-
-  /* useEffect(() => {
-        const db= getFirestore()
-        const queryCollection = collection(db, 'productos')
-        getDocs(queryCollection)
-        .then(resp => setProductos(resp.docs.map(product => ({id : product.id, ...product.data()}))))
-        .finally(() => setLoading(false))
-    }) */
-
-  //filtrado de productos por categoria
   const getProductsFirestore = (categoriaId) => {
     const db = getFirestore();
     const queryCollection = collection(db, "productos");
@@ -66,7 +44,6 @@ const ItemListContainer = ({ greeting }) => {
       <section className="item-list__body">
         {loading ? <Spinner /> : <ItemList items={productos} />}
       </section>
-      {/* <ItemCount stock={10} initial={1} onAdd={onAdd}/> */}
     </>
   );
 };

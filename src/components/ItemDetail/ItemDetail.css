@@ -3,11 +3,11 @@
    /*  border: 2px solid black; */
     display: flex;
     justify-content: center;
-    padding: 5em 0 10em;
+    padding: 5em 0 20em;
 }
 
 .product-container__img{
-    padding: 0em 14em 0em 0em;
+    padding: 0em 7em 0em 0em;
 }
 
 .product-container__details{ 
@@ -20,12 +20,19 @@
 }
 
 .border {
-    background: lightgray;
+    background: #fff;
     display: flex;
     align-items: center;
     border: 0;
 }
 
 .back-button{
-    padding-top: 2px;
+    display: block;
+    padding: 14px 0;
+}
+
+.Carousel {
+    border: 2px solid red;
+    width: 90px;
+    height: 90px;
 }

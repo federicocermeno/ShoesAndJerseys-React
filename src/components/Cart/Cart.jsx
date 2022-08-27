@@ -1,78 +1,95 @@
-import { useCartContext } from "../../context/cartContext"
+import { useCartContext } from "../../context/cartContext";
 import { Link } from "react-router-dom";
-import Button from 'react-bootstrap/Button';
+import Button from "react-bootstrap/Button";
 import { addDoc, collection, getFirestore } from "firebase/firestore";
 import { useState } from "react";
+import CheckoutForm from "../CheckoutForm/CheckoutForm";
+import "./Cart.css";
 
 
 const Cart = () => {
+  const { cartList, cartEmpty, removeItem, totalPrice, totalQuantity } = useCartContext();
 
-  const { cartList, cartEmpty,removeItem, totalPrice  } = useCartContext()
-  const [orderConfirmation, setOrderConfirmation] = useState(false)
-  const [orderId, setOrderId] = useState('')
+  const [orderId, setOrderId] = useState("");
+
+  const [itemsCarro, setItemsCarro] = useState(true)
+
+  
 
   //guardar la orden en base de datos
-  const saveOrder = (e) => {
-    e.preventDefault()
+  const saveOrder = (e, buyerData) => {
+    e.preventDefault();
 
-    const order = {}
-    order.buyer = {email:'example@gmail.com', name:'federico', phone:'123123123'}
-    order.items = cartList.map(prod => {
+    const order = {};
+    order.buyer =
+      buyerData; /* {email:'example@gmail.com', name:'federico', phone:'123123123'} */
+
+    order.items = cartList.map((prod) => {
       return {
         product: prod.nombre,
         id: prod.id,
-        price: prod.precio
-      }
-    })
+        price: prod.precio,
+      };
+    });
 
-    order.total = totalPrice()
+    order.total = totalPrice();
 
     //guardar orden en base de datos
-    const db = getFirestore()
-    const queryOrders = collection(db, 'orders')
+    const db = getFirestore();
+    const queryOrders = collection(db, "orders");
     addDoc(queryOrders, order)
-    .then(resp => setOrderId(resp.id))
-    .finally(setOrderConfirmation(true))
-  }
-  
+      .then((resp) => setOrderId(resp.id))
+      .finally(cartEmpty());
+  };
+ 
   return (
-    <div>
+    <div className="globaldiv">
       <h1>Carrito</h1>
-      <ul>
-        {cartList.map(item => (
-          <li key={item.id}>
-            <div className="w-25">
-              <img src={item.foto} className='w-50'/>
+      <div className="cart-items">
+        <div className='quantity-items'>
+          <h5>Cantidad de items: {totalQuantity()}</h5>
+        </div>
+        {cartList.map((item) => (
+          <div key={item.id}>
+            <div className="displayflexdiv">
+              
+              <div className="w-50">
+                <img src={item.foto} className="w-50" />
+              </div>
+              <div>
+                <p>{item.nombre}</p>
+                <p>Cantidad:{item.cantidad}</p>
+
+                <p>Subtotal: ${item.precio * item.cantidad}</p>
+                <Button variant="danger" onClick={() => removeItem(item.id)}>Eliminar producto</Button>
+              </div>
             </div>
-            {item.nombre} - {item.stock} - {item.cantidad} - Subtotal: ${item.precio * item.cantidad}
-            <button onClick={() => removeItem(item.id)}>X</button>
-          </li>        
+          </div>
         ))}
-      </ul>
-      {totalPrice() == 0 ? 
-        <>
+      </div>
+      {totalPrice() == 0 ? (
+        <div className="empty-cart">
           <h4>El carrito esta vacio</h4>
-          <Link to='/' className="back-button">
+          <Link to="/" className="back-button">
             <Button variant="secondary">Volver a la lista</Button>
           </Link>
-        </>
-        :
-        <>
-          <h4>Precio total : ${totalPrice()}</h4>
-        {/* <button onClick={saveOrder}>Comprar</button> */}
-          <button onClick={cartEmpty} id='hola'>Vaciar carrito</button>
-        </>
-      }
-      <form>
-        <input type="submit" value="Submit" onClick={saveOrder}/>
-      </form>
-      <section>
-        <h4>
-          {orderConfirmation? `Orden colocada. Su ID es: ${orderId} ` : ''}
-        </h4>
-      </section>
-    </div>
-  )
-}
+        </div>
+      ) : (
+        <div className="otro">
+          <CheckoutForm saveOrder={saveOrder} />
+          <div className="cart-info">
+          <h5>Precio total: </h5>
+          <h5>${totalPrice()}</h5>
+          
+          {/* <button onClick={saveOrder}>Comprar</button> */}
+           <Button variant="outline-danger" onClick={cartEmpty}>Vaciar carrito</Button>
+        </div>
+        </div>
 
-export default Cart
+      )}
+      {orderId !== "" && <h4>{`Su ID de compra es: ${orderId} `}</h4>}
+    </div>
+  );
+};
+
+export default Cart;

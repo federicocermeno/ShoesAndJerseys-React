@@ -5,6 +5,7 @@ import "./ItemDetail.css";
 import ItemCount from "../ItemCount/ItemCount";
 import { useCartContext } from "../../context/cartContext";
 
+import "react-responsive-carousel/lib/styles/carousel.min.css"
 
 
 const ItemDetail = ({ item }) => {
@@ -14,19 +15,16 @@ const ItemDetail = ({ item }) => {
   const { addToCart, cartList } = useCartContext()
 
   const onAdd = (cantidad) => {
-    /* console.log(`La cantidad es: ${cantidad}`) */
     setItemCard(false) 
     addToCart({...item, cantidad: cantidad})
   }
-
-  /* console.log(cartList) */
 
   return (
     <>
       <div className="product-container">
         <div className="border">
           <div className="product-container__img">
-            <img src={item.foto} alt="" />
+                <img src={item.foto} alt="" />
           </div>
           <div className="product-container__details">
             <h3>{item.nombre}</h3>
@@ -35,17 +33,18 @@ const ItemDetail = ({ item }) => {
             <h5>{item.descripcion}</h5>
             <h6>Stock: {item.stock}</h6>
 
-            <Link to='/' className="back-button">
-              <Button variant="secondary">Volver a la lista</Button>
-            </Link>
-          </div>
-          {itemCard? 
+            {itemCard? 
             <ItemCount stock={10} initial={1} onAdd={onAdd} />
             :
-            <Link to='/cart' className="back-button">
-              <Button variant="secondary">Terminar mi compra</Button>
+            <Link to='/cart' className="finish-button">
+              <Button variant="success">Terminar mi compra</Button>
             </Link>
           }
+            <Link to='/' className="back-button">
+              <Button variant="outline-secondary">Volver a la lista</Button>
+            </Link>
+          </div>
+          
         </div>
       </div>
     </>

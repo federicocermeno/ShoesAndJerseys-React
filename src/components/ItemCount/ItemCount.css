@@ -1,14 +1,9 @@
 .handle-cart {
-    border: 2px solid red;
-    display: block;
-    margin: 0 auto;
-    text-align: center;
-    width: 30%;
+    padding: 31px 0px 15px;
 }
 
 .cart-buttons{
-    align-items: center;
-    border: 1px solid red;
+    
     display: flex;
     justify-content: center;
     width: 100%;
@@ -19,6 +14,12 @@
     cursor: pointer;
     height: 30px;
     width: 30px;
+    border: 0;
+}
+
+.cart-buttons button:hover {
+    color: red;
+    transition: all .2s;
 }
 
 .cart-buttons p {
@@ -27,4 +28,6 @@
     justify-content: center;
     text-align: center;
     width: 30%;
+    font-size: large;
+    font-weight: 500;
 }
