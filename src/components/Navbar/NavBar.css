@@ -9,13 +9,9 @@
 }
 
 #navbar-title__title {
-  color: #fff;
+  color: #000;
   position: relative;
   text-decoration: none;
-}
-
-#navbar-title__title:hover {
-  color: #fff;
 }
 
 #navbar-title__title::before {
@@ -32,7 +28,7 @@
 }
 
 #basic-nav-dropdown {
-  color: #fff;
+  color: #000;
 }
 
 #navbar-title__title:hover::before {
@@ -51,11 +47,27 @@
 }
 
 #navbar {
-  z-index: 1000;
+  z-index: 100;
   position: fixed;
-  background: rgba(129, 46, 148, 0.178);
+  background: rgb(173 173 173 / 18%);
   box-shadow: 0 8px 32px 0 rgb(31 38 135 / 2%);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(7px);
   border: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+.navbar>.container {
+  justify-content: space-between;
+}
+
+@media (orientation: landscape) {
+  .display-none_cart-landscape {
+    display: none;
+  }
+}
+
+@media (orientation:portrait) {
+  .display-none_cart-portrait {
+    display: none;
+  }
 }

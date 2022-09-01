@@ -46,15 +46,15 @@ export default function ItemCount({ stock, initial, onAdd }) {
   return (
     <div className="handle-cart">
       <div className="cart-buttons">
-        <button onClick={handleSubstract}>
+        <button onClick={handleSubstract} id='boton'>
           <FaMinus />
         </button>
         <p>{count} </p>
-        <button onClick={handleAdd}>
+        <button onClick={handleAdd} id='boton'>
           <FaPlus />
         </button>
+        <br/>
       </div>
-      <br />
       <Button variant="success" onClick={handleAddToCart}>
         Agregar al carrito
       </Button>

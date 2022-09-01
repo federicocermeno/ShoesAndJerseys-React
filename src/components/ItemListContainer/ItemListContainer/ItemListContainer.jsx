@@ -7,7 +7,6 @@ import {
 } from "firebase/firestore";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { getFetch } from "../../../helpers/getFetch";
 import { ItemList } from "../ItemList/ItemList";
 import Spinner from "../LoadingSpinner/Spinner";
 import "./ItemListContainer.css";
@@ -40,6 +39,7 @@ const ItemListContainer = ({ greeting }) => {
 
   return (
     <>
+      <h1>{categoriaId}</h1>
       <p className="item-list__container">{greeting}</p>
       <section className="item-list__body">
         {loading ? <Spinner /> : <ItemList items={productos} />}

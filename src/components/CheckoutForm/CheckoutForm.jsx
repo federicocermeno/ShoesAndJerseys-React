@@ -4,7 +4,6 @@ import Swal from "sweetalert2";
 
 const CheckoutForm = ({saveOrder}) => {
 
-
     const buyAlert = Swal.mixin({
         position: "top-end",
         showConfirmButton: false,

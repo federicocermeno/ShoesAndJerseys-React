@@ -17,15 +17,16 @@ function App() {
           <div className='App'>
             <NavBar />
             <Routes>
-              <Route index path='/' element={<ItemListContainer greeting={'Shoes & Co Shop'} />}/>
+              <Route index path='/' element={<ItemListContainer greeting={'Welcome to this store'} />}/>
               <Route path='/categoria/:categoriaId' element={<ItemListContainer />}/>
               <Route path='/detalle/:prodId' element={<ItemDetailContainer />}/>
               <Route path='/cart' element={<Cart />}/>
               <Route path='*' element={ <Navigate to='/' /> } />
             </Routes>
+        <Footer />
           </div>
         </CartContextProvider>
-        {/* <Footer /> */}
+        
     </BrowserRouter>
   )
 }

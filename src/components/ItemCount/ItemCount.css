@@ -1,23 +1,21 @@
 .handle-cart {
-    padding: 31px 0px 15px;
+    padding: 0 0 15px;
 }
 
 .cart-buttons{
-    
     display: flex;
-    justify-content: center;
-    width: 100%;
+    width: 40%;
 }
 
-.cart-buttons button {
+.cart-buttons #boton {
     background-color: #fff;
+    border: 0;
     cursor: pointer;
     height: 30px;
     width: 30px;
-    border: 0;
 }
 
-.cart-buttons button:hover {
+.cart-buttons #boton:hover {
     color: red;
     transition: all .2s;
 }
@@ -25,9 +23,9 @@
 .cart-buttons p {
     align-items: center;
     display: flex;
+    font-size: large;
+    font-weight: 500;
     justify-content: center;
     text-align: center;
     width: 30%;
-    font-size: large;
-    font-weight: 500;
 }
