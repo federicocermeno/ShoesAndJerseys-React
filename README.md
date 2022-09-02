@@ -10,6 +10,12 @@
 </p>
   
   <p align="center" >Functional Ecommerce React Based</p>
+  
+  # Introduction
+  Sneakers & Jerseys is a functional website that emulates an e-commerce shop. 
+  This site was developed with React and Javascript, using different librarys like SweetAlert2 and Animate.css, between others.
+  I also use Firebase as database for the products and orders.
+  
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/91204851/188198475-c9a416bd-9f85-4cd4-b659-64598f9f6e94.png">
