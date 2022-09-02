@@ -13,8 +13,10 @@ const NavBar = () => {
   return (
     <Navbar expand="lg" fixed="top" id="navbar">
       <Container>
+
         <Link to="/" id="navbar-title__container">
-          <Navbar.Brand id="navbar-title__title">Shoes & Co</Navbar.Brand>
+          <Navbar.Brand><img src="./assets\logo.8bc31dcf.svg" id="navbar-logo"/> </Navbar.Brand>
+          <Navbar.Brand id="navbar-title__title">Shoes & Jerseys</Navbar.Brand>
         </Link>
         <div className="display-none_cart-landscape">
           <Link to="/cart">
@@ -25,12 +27,12 @@ const NavBar = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <NavDropdown title="Categorias" id="basic-nav-dropdown">
-              <Link to="/categoria/shoes" id="dropdown-categories">
-                <p>Jordan shoes</p>
+              <Link to="/categoria/sneakers" id="dropdown-categories">
+                <p>Sneakers</p>
               </Link>
               <NavDropdown.Divider />
-              <Link to="/categoria/remeras" id="dropdown-categories">
-                <p>T-Shirts</p>
+              <Link to="/categoria/jerseys" id="dropdown-categories">
+                <p>Jerseys</p>
               </Link>
             </NavDropdown>
           </Nav>

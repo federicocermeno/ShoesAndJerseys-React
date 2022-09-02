@@ -5,16 +5,13 @@ import { addDoc, collection, getFirestore } from "firebase/firestore";
 import { useState } from "react";
 import CheckoutForm from "../CheckoutForm/CheckoutForm";
 import "./Cart.css";
-
+import { Col, Container, Row, Card, CardGroup } from "react-bootstrap";
 
 const Cart = () => {
-  const { cartList, cartEmpty, removeItem, totalPrice, totalQuantity } = useCartContext();
+  const { cartList, cartEmpty, removeItem, totalPrice, totalQuantity } =
+    useCartContext();
 
   const [orderId, setOrderId] = useState("");
-
-  const [itemsCarro, setItemsCarro] = useState(true)
-
-  
 
   //guardar la orden en base de datos
   const saveOrder = (e, buyerData) => {
@@ -41,54 +38,54 @@ const Cart = () => {
       .then((resp) => setOrderId(resp.id))
       .finally(cartEmpty());
   };
- 
-  return (
-    <div className="globaldiv">
-      <h1>Carrito</h1>
-      <div className="cart-items">
-        <div className='quantity-items'>
-          <h5>Cantidad de items: {totalQuantity()}</h5>
-        </div>
-        {cartList.map((item) => (
-          <div key={item.id}>
-            <div className="displayflexdiv">
-              
-              <div className="w-50">
-                <img src={item.foto} className="w-50" />
-              </div>
-              <div>
-                <p>{item.nombre}</p>
-                <p>Cantidad:{item.cantidad}</p>
 
-                <p>Subtotal: ${item.precio * item.cantidad}</p>
-                <Button variant="danger" onClick={() => removeItem(item.id)}>Eliminar producto</Button>
+  return (
+    <Container>
+      <h1>Carrito</h1>
+      <Row>
+        <Col sm={6}>
+          <div className="quantity-items">
+            <h5>Cantidad de items: {totalQuantity()}</h5>
+          </div>
+          {cartList.map((item) => (
+            <div key={item.id}>
+              <div className="displayflexdiv">
+                <div className="w-50">
+                  <img src={item.foto} className="w-50" />
+                </div>
+                <div>
+                  <p>{item.nombre}</p>
+                  <p>Cantidad:{item.cantidad}</p>
+                  <p>Subtotal: ${item.precio * item.cantidad}</p>
+                  <Button variant="danger" onClick={() => removeItem(item.id)}>
+                    Eliminar producto
+                  </Button>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
-      </div>
-      {totalPrice() == 0 ? (
-        <div className="empty-cart">
-          <h4>El carrito esta vacio</h4>
-          <Link to="/" className="back-button">
-            <Button variant="secondary">Volver a la lista</Button>
-          </Link>
-        </div>
-      ) : (
-        <div className="otro">
-          <CheckoutForm saveOrder={saveOrder} />
-          <div className="cart-info">
-          <h5>Precio total: </h5>
-          <h5>${totalPrice()}</h5>
-          
-          {/* <button onClick={saveOrder}>Comprar</button> */}
-           <Button variant="outline-danger" onClick={cartEmpty}>Vaciar carrito</Button>
-        </div>
-        </div>
+          ))}
+        </Col>
 
-      )}
-      {orderId !== "" && <h4>{`Su ID de compra es: ${orderId} `}</h4>}
-    </div>
+        {totalPrice() == 0 ? (
+          <div className="empty-cart">
+            <h4>El carrito esta vacio</h4>
+            <Link to="/" className="back-button">
+              <Button variant="secondary">Volver a la lista</Button>
+            </Link>
+          </div>
+        ) : (
+          <Col sm={6} >
+            <CheckoutForm saveOrder={saveOrder} />
+            <h5>Precio total: </h5>
+            <h5>${(totalPrice()).toFixed(1)}</h5>
+            <Button variant="outline-danger" onClick={cartEmpty}>
+              Vaciar carrito
+            </Button>
+          </Col>
+        )}
+        {orderId !== "" && <h4>{`Su ID de compra es: ${orderId} `}</h4>}
+      </Row>
+    </Container>
   );
 };
 

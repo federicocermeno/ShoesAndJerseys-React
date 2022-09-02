@@ -49,11 +49,15 @@
 #navbar {
   z-index: 100;
   position: fixed;
-  background: rgb(173 173 173 / 18%);
+  background: rgb(5 240 5 / 18%);
   box-shadow: 0 8px 32px 0 rgb(31 38 135 / 2%);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(7px);
   border: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+#navbar-logo {
+  height: 42px;
 }
 
 .navbar>.container {

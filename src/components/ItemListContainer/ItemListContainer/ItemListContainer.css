@@ -3,11 +3,17 @@
 }
 
 .item-list__container {
-    font-size: 26px;
+    font-size: 2em;
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
 }
 
 .item-list__body {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+}
+
+.item-list_title {
+    text-transform: capitalize;
 }

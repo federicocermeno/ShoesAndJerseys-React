@@ -39,7 +39,7 @@ const ItemListContainer = ({ greeting }) => {
 
   return (
     <>
-      <h1>{categoriaId}</h1>
+      <h1 className="item-list_title">{categoriaId}</h1>
       <p className="item-list__container">{greeting}</p>
       <section className="item-list__body">
         {loading ? <Spinner /> : <ItemList items={productos} />}

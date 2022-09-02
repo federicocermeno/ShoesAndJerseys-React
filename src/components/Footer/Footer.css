@@ -1,4 +1,38 @@
-.footer-real{
-  background-color: #f1f2f3;
-  margin-top: 4em;
+.href-t-none {
+    text-decoration: none;
+    color: #000;
+}
+
+.href-t-none::before {
+    background-color: #000;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 0;
+    position: absolute;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+    width: 100%;
+  }
+
+.href-t-none:hover::before {
+    transform: scaleX(1);
+  }
+
+.href-t-none {
+    color: #000;
+    position: relative;
+    text-decoration: none;
+}
+
+@media (max-width: 767px) {
+
+  #col4 {
+      width: 100%;
+  }
+
+  #col6 {
+    width: 100%;
+  }
 }

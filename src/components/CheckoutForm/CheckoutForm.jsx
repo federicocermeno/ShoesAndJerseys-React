@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { FloatingLabel, Form, Row, Col, Card, Button } from "react-bootstrap"
+import { FloatingLabel, Form, Row, Col, Card, Button, Container } from "react-bootstrap"
 import Swal from "sweetalert2";
 
 const CheckoutForm = ({saveOrder}) => {
@@ -48,8 +48,8 @@ const CheckoutForm = ({saveOrder}) => {
     }
 
     return (
-    <>
-    <Card className="mx-auto" style={{ width: '40rem', margin:'20px'}}>
+    <Container>
+    <Card className="mx-auto" /* style={{ width: '40rem', margin:'20px'}} */>
         <Form onSubmit={event => {handleSubmit(event)}} style={{ margin:'20px'}}>
             <Row className="mb-3">
                 <Form.Group as={Col} controlId="formGroupName">
@@ -59,7 +59,7 @@ const CheckoutForm = ({saveOrder}) => {
                 </Form.Group>
 
                 <Form.Group as={Col} controlId="formGroupPhone">
-                <FloatingLabel controlId="floatingInputPhone" label="Numero Telefonico">
+                <FloatingLabel controlId="floatingInputPhone" label="Nro Telefono">
                     <Form.Control type="tel" onChange={handleChange}  name='phone' value={buyerData.phone || ''} required placeholder="+54341924291"/>
                 </FloatingLabel>
                 </Form.Group>
@@ -83,11 +83,11 @@ const CheckoutForm = ({saveOrder}) => {
                 </FloatingLabel>
             </Form.Group>
         <br/>
-        <Button variant="outline-success" type="submit">Enviar</Button>
+        <Button variant="outline-success" type="submit">Realizar compra</Button>
         </Form>
         </Card>
     
-    </>
+    </Container>
     
     )
 }
