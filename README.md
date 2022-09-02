@@ -21,7 +21,7 @@ git clone https://github.com/federicocermeno/ShoesAndJerseys-React.git
 ```
 Then, you have to position yourself in the proyect folder, with
  ```sh
-cd E-Commerce__React
+cd ShoesAndJerseys-React
 ```
 Assuming that you have already installed Node.js, you must install the dependencies of the proyect:
  ```sh
