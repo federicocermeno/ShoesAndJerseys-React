@@ -34,14 +34,14 @@ npm run dev
 And access via browser with **http://localhost:3000/**.
 
 # Libraries
-React (https://es.reactjs.org/)<br>
-react-router-dom (https://v5.reactrouter.com/web/guides/quick-start/)<br>
-React-Bootstrap (https://react-bootstrap.github.io/) <br>
-React Icons (https://react-icons.github.io/react-icons/) <br>
-Material UI (https://mui.com/)<br>
-SweetAlert2 (https://sweetalert2.github.io/)<br>
-Animate.css (https://animate.style/) <br>
-Firebase (https://firebase.google.com/)<br>
+React (https://es.reactjs.org/) V.18.0.0<br>
+react-router-dom (https://v5.reactrouter.com/web/guides/quick-start/) V.6.3.0 <br>
+React-Bootstrap (https://react-bootstrap.github.io/) V.2.4.0 <br>
+React Icons (https://react-icons.github.io/react-icons/) V.4.4.0 <br>
+Material UI (https://mui.com/) V.5.10.3<br>
+SweetAlert2 (https://sweetalert2.github.io/) V.11.4.29<br>
+Animate.css (https://animate.style/) V.4.1.1<br>
+Firebase (https://firebase.google.com/) V.9.9.1<br>
 
 # Screenshots
 <p align="center">
