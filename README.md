@@ -4,7 +4,7 @@
   <p align="center">
      <img src="assets\logo.svg" width=100 align="center">
   </p>
-  <p align="center">Sneakers And Jerseys</p>
+  <h1 align="center">Sneakers And Jerseys</h1>
 
 
 <p align="center">
