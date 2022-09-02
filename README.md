@@ -2,6 +2,7 @@
   <img src="assets\logo.svg" width=150 align="center">
 </p>
   <h1 align="center">Sneakers And Jerseys</h1>
+  <p align="center" >Functional Ecommerce React Based</p>
   
   <p align=center>
  <b>Created with:</b><br><br>
