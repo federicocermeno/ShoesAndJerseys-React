@@ -1,7 +1,9 @@
 # Shoes & Jerseys
 
 <div display="flex" align-items="center">
-  # <p align="center"> <img src="assets\logo.svg" width=50 heigth=50> Sneakers And Jerseys <img src="assets\logo.svg" width=50  heigth=50> </p>
+  <img src="assets\logo.svg" width=100>
+  <br>
+  # <p align="center">Sneakers And Jerseys</p>
 </div>
 
 
