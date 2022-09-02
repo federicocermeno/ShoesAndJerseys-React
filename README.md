@@ -4,18 +4,24 @@
   <h1 align="center">Sneakers And Jerseys</h1>
   
   <p align=center>
-  <br>
- <b>Generated with:</b><br><br>
+ <b>Created with:</b><br><br>
   <img src="https://vitejs.dev/logo.svg" height="50px"><br>Vite
 </p>
   
   <p align="center" >Functional Ecommerce React Based</p>
   
   # Introduction
-  Sneakers & Jerseys is a functional website that emulates an e-commerce shop. 
+  <p align="left">
+  Sneakers & Jerseys is a completely functional website that emulates an e-commerce shop.
+  </p>
+  <p align="left">
   This site was developed with React and Javascript, using different librarys like SweetAlert2 and Animate.css, between others.
+  </p>
+  <p align="left">
   I also use Firebase as database for the products and orders.
+  </p>
   
+  # Instalation
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/91204851/188198475-c9a416bd-9f85-4cd4-b659-64598f9f6e94.png">
