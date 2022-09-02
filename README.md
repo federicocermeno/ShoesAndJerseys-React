@@ -1,7 +1,7 @@
 <p align="center">
   <img src="assets\logo.svg" width=150 align="center">
 </p>
-  <h1 align="center">Sneakers And Jerseys</h1>
+  <h1 align="center">Shoes And Jerseys</h1>
   <h4 align="center" >Functional Ecommerce Built With React</h4>
   
   <p align=center>
@@ -17,7 +17,7 @@
   # Quick Start
   In first place, you must clone the repository with
   ```sh
-git clone https://github.com/federicocermeno/E-Commerce__React.git
+git clone https://github.com/federicocermeno/ShoesAndJerseys-React.git
 ```
 Then, you have to position yourself in the proyect folder, with
  ```sh
