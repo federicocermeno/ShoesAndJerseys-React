@@ -19,15 +19,15 @@
   ```sh
 git clone https://github.com/federicocermeno/ShoesAndJerseys-React.git
 ```
-Then, you have to position yourself in the proyect folder, with
+Then, you have to position yourself in the project folder, with
  ```sh
 cd ShoesAndJerseys-React
 ```
-Assuming that you have already installed Node.js, you must install the dependencies of the proyect:
+Assuming that you have already installed Node.js, you must install the dependencies of the project:
  ```sh
 npm i
 ```
-Finally, you can run the proyect with 
+Finally, you can run the project with 
  ```sh
 npm run dev
 ```
